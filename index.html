@@ -17,7 +17,7 @@
             color: white;
             padding: 10px;
             text-align: center;
-            font-size: 10px;
+            font-size: 14px;
             position: fixed;
             top: 0;
             left: 0;
@@ -31,8 +31,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('img/fondo.jpg') no-repeat center center/cover;
+            background: url('img/fondo.jpg') no-repeat center center;
+            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
             text-align: center;
+            margin: 0; /* Para evitar el margen en la pantalla del celular */
         }
 
         /* Estilo para el contenido */
@@ -80,9 +82,9 @@
                 const data = await response.json();
 
                 // Actualizar los elementos del banner con los precios formateados
-                document.getElementById('btc-price').innerText = "Btc CLP$ " + formatNumber(data.bitcoin.clp);
-                document.getElementById('eth-price').innerText = "Eth CLP$ " + formatNumber(data.ethereum.clp);
-                document.getElementById('usdc-price').innerText = "Usdc CLP$ " + formatNumber(data['usd-coin'].clp);
+                document.getElementById('btc-price').innerText = "Btc CLP$" + formatNumber(data.bitcoin.clp);
+                document.getElementById('eth-price').innerText = "Eth CLP$" + formatNumber(data.ethereum.clp);
+                document.getElementById('usdc-price').innerText = "Usdc CLP$" + formatNumber(data['usd-coin'].clp);
             } catch (error) {
                 console.error("Error fetching prices:", error);
             }
