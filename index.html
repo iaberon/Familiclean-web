@@ -5,36 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página en construcción</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('img/fondo.jpg') no-repeat center center;
-            background-size: cover;
+            background: url('img/fondo.jpg') no-repeat center center/cover;
             text-align: center;
+        }
+        
+        .contenido {
+            background: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
             color: white;
-            font-family: Arial, sans-serif;
-            position: relative;
+            padding: 20px;
+            border-radius: 10px;
         }
+
         h1 {
-            position: absolute;
-            top: 2%;
-            width: 100%;
-            font-size: 2em;
-        }
-        p {
-            position: absolute;
-            bottom: 4%;
-            width: 100%;
-            font-size: 1.2em;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>¡Estamos trabajando en nuestra página!</h1>
-    <p>Pronto estaremos listos. Gracias por tu paciencia.</p>
+    <div class="contenido">
+        <h1>¡Estamos trabajando en nuestra página!</h1>
+        <p>Pronto estaremos listos. Gracias por tu paciencia.</p>
+    </div>
 </body>
 </html>
