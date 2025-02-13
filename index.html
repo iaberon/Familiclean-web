@@ -25,18 +25,18 @@
             z-index: 1000;
         }
 
-        /* Estilo para el cuerpo de la página */
+        /* Fondo por defecto (horizontal) */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-            height: 100vh; /* Mantén el 100% de la altura */
-            background: url('img/fondo.jpg') no-repeat center center;
-            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-            text-align: center;
-            margin: 0; /* Para evitar el margen en la pantalla del celular */
+        background: url('fondo-horizontal.jpg') no-repeat center center/cover;
         }
+
+        /* Cuando la pantalla esté en vertical */
+        @media screen and (max-aspect-ratio: 1/1) {
+        body {
+        background: url('fondo-vertical.jpg') no-repeat center center/cover;
+        }
+        }
+
 
         /* Estilo para el contenido */
         .contenido {
