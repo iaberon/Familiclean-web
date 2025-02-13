@@ -27,20 +27,26 @@
 
         /* Fondo por defecto (horizontal) */
         body {
-        background: url('fondo-horizontal.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: url('img/fondo-horizontal.jpg') no-repeat center center/cover;
+            text-align: center;
+            margin: 0;
         }
 
         /* Cuando la pantalla esté en vertical */
         @media screen and (max-aspect-ratio: 1/1) {
-        body {
-        background: url('fondo-vertical.jpg') no-repeat center center/cover;
+            body {
+                background: url('img/fondo-vertical.jpg') no-repeat center center/cover;
+            }
         }
-        }
-
 
         /* Estilo para el contenido */
         .contenido {
-            background: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -70,9 +76,8 @@
 
     <!-- Script para obtener los precios de las criptomonedas -->
     <script>
-        // Función para formatear los números en el formato de miles (por ejemplo, 91611306 -> 91.573.452)
+        // Función para formatear los números en el formato de miles
         function formatNumber(number) {
-            // Asegurarse de que el número sea tratado como entero y luego formatearlo
             return new Intl.NumberFormat('es-CL').format(parseInt(number));
         }
 
@@ -82,7 +87,6 @@
                 const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,usd-coin&vs_currencies=clp');
                 const data = await response.json();
 
-                // Actualizar los elementos del banner con los precios formateados
                 document.getElementById('btc-price').innerText = "Btc CLP$" + formatNumber(data.bitcoin.clp);
                 document.getElementById('eth-price').innerText = "Eth CLP$" + formatNumber(data.ethereum.clp);
                 document.getElementById('usdc-price').innerText = "Usdc CLP$" + formatNumber(data['usd-coin'].clp);
@@ -91,7 +95,7 @@
             }
         }
 
-        // Llamar a la función para obtener los precios cuando la página se cargue
+        // Llamar a la función cuando la página se cargue
         fetchCryptoPrices();
     </script>
 </body>
