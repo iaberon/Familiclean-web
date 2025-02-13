@@ -32,7 +32,10 @@
             align-items: center;
             width: 100vw;
             height: 100vh;
-            background: url('img/fondo-horizontal.jpg') no-repeat center center/cover;
+            background-image: url('img/fondo-horizontal.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
             text-align: center;
             margin: 0;
         }
@@ -40,7 +43,7 @@
         /* Cuando la pantalla esté en vertical */
         @media screen and (max-aspect-ratio: 1/1) {
             body {
-                background: url('img/fondo-vertical.jpg') no-repeat center center/cover;
+                background-image: url('img/fondo-vertical.jpg');
             }
         }
 
